@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>姓名登记 · 青年菁英生涯发展协会</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 14% 10%,#dce4ff 0,transparent 32%),radial-gradient(circle at 90% 90%,#ead9ff 0,transparent 36%),#f7f8ff;color:#202b4b;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}.card{position:relative;width:min(100%,440px);padding:42px 36px 34px;border:1px solid #fff9;border-radius:32px;background:#ffffffd9;box-shadow:0 25px 70px #34427c1a;backdrop-filter:blur(16px);overflow:hidden}.card:before{content:"";position:absolute;width:180px;height:180px;right:-92px;top:-92px;border-radius:50%;background:#d9d8ff99}.eyebrow{margin:0 0 11px;color:#6273db;font:700 12px/1.3 system-ui;letter-spacing:1.8px}.title{margin:0;font-size:31px;letter-spacing:-1px}.intro{margin:12px 0 27px;color:#74809b;font-size:15px;line-height:1.8}.label{display:block;margin:0 0 9px;font-size:13px;font-weight:700}.field{width:100%;height:56px;border:1px solid #dbe1f1;border-radius:17px;padding:0 17px;outline:0;background:#fff;color:#253252;font:500 16px inherit;transition:.2s}.field:focus{border-color:#697de8;box-shadow:0 0 0 4px #6c7ee71a}.submit{width:100%;height:55px;margin-top:14px;border:0;border-radius:17px;background:linear-gradient(105deg,#4f70e9,#8358e8);box-shadow:0 12px 25px #5867d43b;color:#fff;font:700 16px inherit;cursor:pointer;transition:transform .18s,opacity .18s}.submit:active{transform:scale(.985)}.submit:disabled{opacity:.62;cursor:wait}.success{display:none;margin-top:17px;padding:14px 15px;border-radius:16px;background:#eaf9f4;color:#168768;font-size:14px;font-weight:600}.success.show{display:block}.footer{margin:22px 0 0;text-align:center;color:#9aa4bb;font-size:12px}@media(max-width:480px){body{align-items:center;padding:18px}.card{padding:35px 25px 28px;border-radius:28px}.title{font-size:28px}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">YOUTH ELITE</p>
+    <h1 class="title">姓名登记</h1>
+    <p class="intro">请填写你的姓名，提交后我们将进行小组分配工作。</p>
+    <form id="form">
+      <label class="label" for="name">姓名</label>
+      <input class="field" id="name" name="name" maxlength="30" autocomplete="name" placeholder="请输入姓名" required>
+      <button class="submit" id="submit" type="submit">提交</button>
+    </form>
+    <div class="success" id="success">✓ 登记成功，感谢你的填写。</div>
+    <p class="footer">青年菁英生涯发展协会</p>
+  </main>
+  <script>
+    const form=document.querySelector('#form'),button=document.querySelector('#submit'),success=document.querySelector('#success');
+    form.addEventListener('submit',async event=>{event.preventDefault();const name=new FormData(form).get('name').trim();if(!name)return;button.disabled=true;button.textContent='正在提交…';try{const r=await fetch('/api/name-submissions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})}),d=await r.json();if(!r.ok)throw Error(d.error);form.reset();success.classList.add('show');button.textContent='提交成功'}catch(error){alert(error.message||'提交失败，请稍后再试');button.disabled=false;button.textContent='提交'} });
+  </script>
+</body>
+</html>

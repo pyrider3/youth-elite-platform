@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>青年菁英报名二维码</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1600px; overflow: hidden; background:#fcfbf7; }
+    body { color: #15204a; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+    .poster { position:relative; width:1080px; height:1600px; overflow:hidden; background:#fcfbf7; }
+    .frame { position:absolute; inset:34px; border:2px solid #d5dcee; pointer-events:none; }
+    .grid { position:absolute; left:65px; right:65px; top:730px; bottom:102px; opacity:.85; background-image:linear-gradient(#eef0f5 1px,transparent 1px),linear-gradient(90deg,#eef0f5 1px,transparent 1px); background-size:120px 105px; }
+    .hero { position:absolute; inset:0 0 auto; height:490px; overflow:hidden; background:#102257; }
+    .hero:after { content:""; position:absolute; right:-130px; top:-190px; width:530px; height:530px; border:3px solid #7896fa; border-radius:50%; box-shadow:0 0 0 56px rgba(120,150,250,.08),0 0 0 118px rgba(120,150,250,.06); }
+    .line { position:absolute; left:65px; top:94px; width:180px; height:4px; background:#b8c8ff; }
+    .en { position:absolute; left:65px; top:125px; color:#cbd6ff; font-size:18px; letter-spacing:.8px; }
+    .uni { position:absolute; left:65px; top:187px; color:white; font-size:52px; font-weight:800; letter-spacing:1px; }
+    .club { position:absolute; left:65px; top:267px; color:white; font-size:58px; line-height:1; font-weight:800; letter-spacing:1px; }
+    .year { position:absolute; left:65px; top:370px; color:#cbd6ff; font-size:24px; letter-spacing:2px; }
+    .register { position:absolute; left:65px; top:451px; width:323px; height:170px; padding:20px 30px; background:#ea4b4b; color:white; }
+    .register strong { display:block; font-size:72px; line-height:1; letter-spacing:4px; }
+    .register span { display:block; margin-top:13px; font-size:20px; font-weight:bold; letter-spacing:3px; color:#ffe5e3; }
+    .intro { position:absolute; top:488px; left:423px; right:120px; border-top:2px solid #ccd5ed; padding-top:25px; }
+    .intro b { display:block; font-size:35px; letter-spacing:1px; }
+    .intro span { display:block; margin-top:16px; font-size:23px; color:#73809b; }
+    .ticket { position:absolute; left:125px; top:700px; width:830px; height:660px; border:3px solid #d8dfef; border-radius:20px; background:white; box-shadow:0 18px 45px rgba(27,47,110,.08); overflow:hidden; }
+    .ticket:before { content:""; position:absolute; inset:0 0 auto; height:14px; background:#2f55d4; }
+    .ticket-title { position:absolute; left:42px; top:55px; font-size:30px; font-weight:800; }
+    .ticket-note { position:absolute; left:42px; top:105px; font-size:21px; color:#73809b; }
+    #qrcode { position:absolute; left:175px; top:154px; width:480px; height:480px; display:grid; place-items:center; border:3px solid #d9e0f0; border-radius:12px; background:white; }
+    #qrcode img { width:440px !important; height:440px !important; image-rendering: pixelated; }
+    .steps { position:absolute; top:255px; width:120px; font-size:16px; color:#73809b; }
+    .steps b { display:block; margin-bottom:8px; font-size:24px; color:#2f55d4; }
+    .steps i { display:block; width:79px; margin-bottom:18px; border-top:2px solid #c9d3ee; }
+    .steps strong { display:block; margin-bottom:7px; color:#15204a; font-size:19px; }
+    .one { left:40px; }.two { right:20px; }
+    .footer { position:absolute; left:65px; right:65px; bottom:67px; padding-top:35px; border-top:2px solid #cdd5e8; color:#7c879c; font-size:21px; }
+    .footer b { float:right; color:#2f55d4; letter-spacing:1px; }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <div class="grid"></div><div class="frame"></div>
+    <header class="hero"><div class="line"></div><div class="en">SHANXI UNIVERSITY OF FINANCE AND ECONOMICS</div><div class="uni">山西财经大学就业协会</div><div class="club">青年菁英生涯发展协会</div><div class="year">2026 · 招新报名</div></header>
+    <div class="register"><strong>报名</strong><span>JOIN&nbsp;&nbsp;US</span></div>
+    <div class="intro"><b>把热爱带进真实的协作</b><span>扫描下方二维码，填写报名信息</span></div>
+    <section class="ticket"><div class="ticket-title">在线报名入口</div><div class="ticket-note">请使用微信或浏览器扫码填写</div><div class="steps one"><b>01</b><i></i><strong>填写信息</strong>选择意向部门</div><div id="qrcode"></div><div class="steps two"><b>02</b><i></i><strong>提交报名</strong>等待后续联系</div></section>
+    <footer class="footer">山西财经大学大数据学习实验室提供支持 <b>2026</b></footer>
+  </main>
+  <script>new QRCode(document.getElementById('qrcode'), { text: 'https://new.qnjyxh.xyz', width: 440, height: 440, colorDark: '#16213e', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });</script>
+</body>
+</html>

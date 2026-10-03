@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>2026青年菁英生涯发展协会信息</title>
+  <link rel="stylesheet" href="/wenjuan.css?v=20260923-1">
+  <script src="/wenjuan.js?v=20260923-2" defer></script>
+</head>
+<body>
+  <main class="wrap">
+    <header><h1>2026青年菁英生涯发展协会信息</h1><p>请按实际情况填写。标有 * 的项目为必填项。</p></header>
+    <form id="survey" class="card" novalidate>
+      <h2>基本信息</h2>
+      <div class="grid">
+        <label>姓名 *<input name="name" maxlength="40" autocomplete="name" required></label>
+        <div class="select-field"><span id="gender-label" class="field-label">性别 *</span><div class="custom-select" data-name="gender"><input type="hidden" name="gender"><button type="button" class="select-trigger" role="combobox" aria-labelledby="gender-label gender-value" aria-expanded="false" aria-controls="gender-options" aria-required="true"><span id="gender-value" class="select-value placeholder">请选择</span><span class="select-arrow" aria-hidden="true"></span></button><div id="gender-options" class="select-options" role="listbox" aria-labelledby="gender-label" hidden><button type="button" role="option" aria-selected="false" data-value="男">男</button><button type="button" role="option" aria-selected="false" data-value="女">女</button></div></div></div>
+        <label>学院 *<input name="college" maxlength="80" placeholder="例如：应用数学学院" required></label>
+        <label>班级 *<input name="class_name" maxlength="80" placeholder="例如：2024金融数学2班" required></label>
+        <label>学号 *<input name="student_id" maxlength="30" inputmode="text" required></label>
+        <label>手机号码 *<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" pattern="1[0-9]{10}" maxlength="11" required></label>
+        <div class="select-field"><span id="department-label" class="field-label">部门 *</span><div class="custom-select" data-name="department"><input type="hidden" name="department"><button type="button" class="select-trigger" role="combobox" aria-labelledby="department-label department-value" aria-expanded="false" aria-controls="department-options" aria-required="true"><span id="department-value" class="select-value placeholder">请选择部门</span><span class="select-arrow" aria-hidden="true"></span></button><div id="department-options" class="select-options" role="listbox" aria-labelledby="department-label" hidden><button type="button" role="option" aria-selected="false" data-value="办公室">办公室</button><button type="button" role="option" aria-selected="false" data-value="新媒体">新媒体</button><button type="button" role="option" aria-selected="false" data-value="项目部">项目部</button><button type="button" role="option" aria-selected="false" data-value="实践部">实践部</button></div></div></div>
+      </div>
+      <fieldset><legend>是否团员/党员 *</legend><label class="choice"><input type="radio" name="is_member" value="yes" required> 是</label><label class="choice"><input type="radio" name="is_member" value="no"> 否</label></fieldset>
+      <section id="memberFields" hidden>
+        <fieldset><legend>请选择身份 *</legend><label class="choice"><input type="radio" name="member_type" value="league"> 团员</label><label class="choice"><input type="radio" name="member_type" value="party"> 党员</label></fieldset>
+        <h2 id="memberHeading">成员信息</h2>
+        <div class="grid">
+          <label>出生年月 *<input name="birth_month" type="text" inputmode="text" maxlength="20" placeholder="例如：2005年1月"></label>
+          <label>民族 *<input name="ethnicity" maxlength="100" placeholder="例如：汉族"></label>
+          <label>籍贯 *<input name="native_place" maxlength="100" placeholder="例如：山西省太原市"></label>
+          <label><span id="joinedLabel">加入时间</span> *<input name="joined_month" type="text" inputmode="text" maxlength="20" placeholder="例如：2019年5月"></label>
+          <label class="wide"><span id="branchLabel">所属基层组织</span> *<input name="branch" maxlength="100" placeholder="一般填写所在班级团支部"></label>
+        </div>
+      </section>
+      <p class="privacy">提交的信息仅用于协会成员信息登记。</p>
+      <p id="message" role="status" aria-live="polite"></p>
+      <button id="submitButton" type="submit">提交信息 <span aria-hidden="true">→</span></button>
+    </form>
+    <div id="success" class="card success" hidden><div class="check">✓</div><h2>提交成功</h2><p>你的信息已登记。</p></div>
+    <footer>青年菁英生涯发展协会</footer>
+  </main>
+</body>
+</html>

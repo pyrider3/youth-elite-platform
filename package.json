@@ -1,0 +1,8 @@
+{
+  "name": "youth-elite-volunteer-hours",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=22.13.0" },
+  "type": "module",
+  "scripts": { "start": "node server.js" }
+}

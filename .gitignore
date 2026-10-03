@@ -1,0 +1,22 @@
+# Local application data, uploads, AI credentials and runtimes
+/data/
+/node_modules/
+/outputs/
+/work/
+/service-backup/
+/tools/
+/service-guardian.ps1
+/new-public/*.txt
+/.env
+/.env.*
+!/.env.example
+*.db
+*.sqlite
+*.sqlite-*
+*.log
+*.pem
+*.key
+auth.json
+oauth_creds.json
+.DS_Store
+Thumbs.db

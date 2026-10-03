@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101b31">
+  <title>大数据分析与机器学习实践社 · 招新报名</title>
+  <link rel="stylesheet" href="/dsj.css?v=2">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span><span>大数据分析与<br>机器学习实践社</span></div>
+      <span class="edition">2026 · 招新</span>
+    </header>
+
+    <section class="experience" aria-label="互动报名">
+      <div class="progress-line"><span id="progressFill"></span></div>
+      <div class="progress-meta"><span id="stepLabel">欢迎</span><span id="stepCount">0 / 5</span></div>
+
+      <div class="character-stage" aria-hidden="true">
+        <span class="halo halo-one"></span><span class="halo halo-two"></span>
+        <span class="data-star star-one">✦</span><span class="data-star star-two">✧</span><span class="data-star star-three">·</span>
+        <div class="character-motion" id="characterMotion">
+          <div class="hand hand-left"></div><div class="hand hand-right"></div>
+          <div class="character" id="character">
+            <span class="shine"></span><span class="eye eye-left"></span><span class="eye eye-right"></span>
+            <span class="cheek cheek-left"></span><span class="cheek cheek-right"></span><span class="mouth"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="conversation" id="conversation" aria-live="polite">
+        <p class="speaker">你好，我是小数 <span class="speaker-dot"></span></p>
+        <h1 id="question">欢迎来到大数据分析与机器学习实践社！</h1>
+        <p id="hint">用几个小问题认识你。完成后，我们会尽快与你联系。</p>
+      </div>
+
+      <form id="signupForm" novalidate>
+        <div class="answer" id="answer"></div>
+        <p class="error" id="error" role="alert" hidden></p>
+        <div class="buttons"><button class="back" id="back" type="button" hidden>上一步</button><button class="next" id="next" type="button">开始报名 <span aria-hidden="true">→</span></button></div>
+      </form>
+      <p class="privacy-note">信息仅用于本社团报名与联系</p>
+    </section>
+  </main>
+  <script src="/dsj.js?v=3"></script>
+</body>
+</html>
