@@ -1,15 +1,18 @@
 # 青年菁英协会网站
 
-志愿时长登记、报名管理和文件协助处理平台。使用 Node.js 原生 HTTP 服务、SQLite 和 HTML/CSS/JavaScript。
+青年菁英生涯发展协会官网、志愿时长登记、报名管理和文件协助处理平台。后台使用 Node.js 原生 HTTP 服务、SQLite 和 HTML/CSS/JavaScript；官网为独立静态页面。
 
 ## 功能
 
+- 协会官网：沉浸式介绍、活动照片、部门介绍、公众号展示与常驻报名入口，文件位于 [`official-site/`](official-site/README.md)，现有访问地址为 <https://sxufe.qnjyxh.xyz/>。
 - 公众登记志愿时长，管理员审核、修改、删除和导出，统计仅包含已通过记录。
 - 青年菁英生涯发展协会报名：小菁交互式报名、手动表单、按部门查看和筛选、已联系标记。
 - 大数据分析与机器学习实践社报名和独立管理页面。
 - 文件工具：上传文件并描述要求，自由选择本机 Codex 或 Antigravity，查看进度并下载结果。
 
 ## 本地启动
+
+官网可单独预览和部署，见 [`official-site/README.md`](official-site/README.md)。下面的步骤用于后台与报名平台。
 
 需要 Node.js 22.13 或更新版本（使用 `node:sqlite`）。当前项目没有额外 npm 依赖。
 
